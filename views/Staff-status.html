@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <title>CheckStatus Staff</title>
+
+    <style>
+        #head {
+            background-color: orangered;
+        }           
+        #Chead {
+            position: relative;
+            margin: 20px;
+        }
+        .centered-text {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+        }
+        .row {
+            display: flex;
+            flex-direction: row;            
+        }       
+        #title {            
+            width: 250px;
+            height: 30px;
+            float: left;
+            flex: 3;
+            margin-right: 0.5rem;
+            border-radius: 8px;
+        }
+        thead {
+            background-color: lightsalmon;
+        } 
+        #search {            
+            width: 150px;
+            height: 30px;
+            padding: 0px 5px;
+        }            
+    </style>
+</head>
+
+<body class="bg-black">
+    
+    <!--Head-->
+    <div class="container-fluid" id="head"> 
+        <div class="text-center text-white"> 
+            <h1>CheckStatus Staff</h1>             
+        </div> 
+    </div> 
+
+    <!--Card-->
+    <div class="container-fluid mt-5 w-60">
+        <div class="card bg-light ">            
+            <div class="card-body">
+                <div id="Chead" class="container" >
+                    <div id="row">
+                        <img src="/public/img/checklist.png" alt="Clipboard">
+                        <div id="title" class="centered-text bg-primary text-white text-center border border-primary">
+                            <h3>Check Status</h3>                        
+                        </div>
+                        <button type="submit" class="btn float-end btn-light border p-1">Search</button>                  
+                        <input type="search" id="Search" placeholder="Search" class="float-end"> 
+                    </div>   
+                                                                    
+                </div>                
+                
+                <div id="table" class="container text-center">
+                    <table class="table table-bordered table-active">
+                        <thead>
+                            <tr>
+                                <th>ID</th> <th>Image</th> <th>Item</th> <th>Status</th>
+                            </tr>
+                        </thead>                        
+                        <tr>
+                            <td>1</td> <td><img src="/public/img/book.png" alt="book"></td> <td class="bg-success">Porduct</td> <td class="bg-success">Add</td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td> <td><img src="/public/img/book.png" alt="book"></td> <td class="bg-warning">Porduct</td> <td class="bg-warning">Modify</td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td> <td><img src="/public/img/book.png" alt="book"></td> <td class="bg-danger">Porduct</td> <td class="bg-danger">Delete</td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td> <td><img src="/public/img/book.png" alt="book"></td> <td class="bg-success">Porduct</td> <td class="bg-success">Add</td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>5</td> <td><img src="/public/img/book.png" alt="book"></td> <td class="bg-warning">Porduct</td> <td class="bg-warning">Modify</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>        
+    </div>
+    
+</body>
+</html>
