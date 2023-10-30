@@ -1,0 +1,21 @@
+.card {
+    max-width: 10rem;
+    box-shadow: lightgrey 2px 2px 2px;
+}
+
+.avatar {
+    max-width: 3rem;
+    width: 11rem;
+    height: 50px; /* ปรับขนาดของ avatar */
+}
+.img-fluid{
+    border: 5px solid white; /* กำหนดกรอบสีขาว ขนาด เส้นโซลิด สีขาว */
+    border-radius: 5px;
+}
+#two {
+    border-top: 2px solid goldenrod; /* สำหรับเส้นตรงข้างบน articleที่2 ใส่paddig เว้นระยะหัวข้อกับเส้น  */
+    padding-top: 20px;
+}
+
+
+

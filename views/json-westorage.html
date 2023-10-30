@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" class="form-control mt-3" id="txtUser" disabled>
+        <div class="mb-3">
+            <input type="radio" name="gender" value="male" class="form-ckeck-input" disabled> Male
+            <input type="radio" name="gender" value="female" class="form-ckeck-input" disabled> Female
+        </div>
+        <div>
+            <button id="btnEdit" class="btn btn-primary">Edit</button>
+            <button id="btnReset" class="btn btn-danger">Reset</button>
+        </div>
+
+        <script>
+            // check localStorage existed?
+            const user = localStorage.user;
+            if (user !== undefined) {
+                // we found user data
+                const data = JSON.parse(user);
+                document.querySelector('#txtUser').value = data.username;
+                if (data.gender == "female") {
+                    document.querySelector('input[name=gender][value=female]').checked = true;
+                }
+                else {
+                    document.querySelector('input[name=gender][value=male]').checked = true;
+                }
+            }
+
+            //edit
+            const btnEditSave = document.querySelector('#btnEdit')
+            btnEditSave.onclick = () => {
+                if (btnEditSave.innerText == 'Edit') {
+                    // alert('edit')
+                    // enable inputs
+                    document.querySelector('#txtUser').disabled = false;
+                    document.querySelector('input[name=gender][value=male]').disabled = false;
+                    document.querySelector('input[name=gender][value=female]').disabled = false;
+                    // change button's text
+                    btnEditSave.innerText = 'Save';
+                } else {
+                    // get inputs
+                    const username = document.querySelector('#txtUser').value;
+                    const gender = document.querySelector('input[name=gender]:checked').value;
+                    //alert(username + " " + gender) 
+                    //save to localStorge
+                    // localStorage.username = username;
+                    // localStorage.gender = gender;
+                    const user = { "username": username, "gender": gender };
+                    const json = JSON.stringify(user);
+                    localStorage.user = json;
+
+                    //disable inputs
+                    document.querySelector('#txtUser').disable = true;
+                    document.querySelector('input[name=gender][value=male]').disable = true;
+                    document.querySelector('input[name=gender][value=female]').disable = true;
+                    //change button's text
+
+                    btnEditSave.innerText = 'Edit';
+                }
+
+            }
+            //reset
+            document.querySelector('#btnReset').onclick = function () {
+                //clear storge
+                //localStorge.clear();
+                localStorage.removeItem('user');
+                //clear inputs
+                //disable inputs
+                window.location.reload();
+            };
+
+        </script>
+    </div>
+</body>
+
+</html>

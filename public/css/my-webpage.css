@@ -1,0 +1,15 @@
+.card{
+    max-width: 10rem;
+    box-shadow: lightgray 2px 2px 2px;
+}
+.avatar{
+    max-width: 4rem;
+}
+.img-fluid{
+    border: 5px solid white;
+    border-radius: 5px;
+}
+#two{
+    padding-top: 20px;
+    border-top: 2px solid goldenrod;
+}

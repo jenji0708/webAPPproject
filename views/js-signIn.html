@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row mt-4" style="display: flex;justify-content: center;">
+            <h1 class="text-center mb-5">Asset Management System</h1>
+            <div class="col-sm-6">
+                <form id="signInForm" style="border: 1px solid blue; padding: 20px; border-radius: 5px;">
+                    <div>
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" class="form-control" required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="d-grid mt-3">
+                        <button type="button" class="btn btn-primary" id="btn_SignIn">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const users = [
+        { "id": 1, "username": "admin", "password": "1111", "role": 1 },
+        { "id": 2, "username": "aaa", "password": "2222", "role": 2 },
+        { "id": 3, "username": "bbb", "password": "333", "role": 2 }
+    ];
+    document.getElementById("btn_SignIn").addEventListener("click", function () {
+        const usernameInput = document.getElementById("username").value;
+        const passwordInput = document.getElementById("password").value;
+
+        const user = users.find(u => u.username === usernameInput && u.password === passwordInput);
+
+        if (user) {
+            window.location.assign('assets.html');
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Login failed, try agian!',
+            });
+        }
+    });
+
+</script>
+
+</html>

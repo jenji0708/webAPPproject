@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page1</title>
+</head>
+<body>
+    <h1>Page1</h1>
+    <!-- <a href="js-bom2.html">next</a> -->
+    <button>next</button>
+    
+    <script>
+        document.querySelector('button').onclick = function()
+        {
+            //alert('test');
+            window.location.assign('js-bom2.html'); //jump to page2
+            //window.location.href = 'js-bom2.html'; //jump to page2
+            //window.location.replace('js-bom2.html'); //jump to page 2 but will be never bsck to page1
+        }
+    </script>
+</body>
+</html>

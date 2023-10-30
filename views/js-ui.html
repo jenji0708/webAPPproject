@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="txt">Counter = 0</h1>
+    <button>OK</button>
+
+    <!-- JS -->
+    <script>
+        const btnOK = document.querySelector('button');
+        var count = 0;
+        btnOK.onclick = function () {
+            // document.querySelector('#txt').innerText = 'Counter = 1';
+            // count = count + 1;
+            count++;
+            document.querySelector('#txt').innerText = 'Counter = ' + count;
+
+        }
+        // btnOK.addEventListener('click', function () {
+        //     //alert('ok');
+        //     document.querySelector('#txt').innerText = 'Welcome';
+        // });
+
+
+
+    </script>
+
+
+    <!-- <script>
+        //get หาค่าให้เจออันนี้ใช้id
+        // const txt = document.getElementById('txt')
+        //เปลี่ยนค่าข้อความจากHello > Welcome
+        // txt.innerText = 'Welcome'
+
+        //แบบย่อ
+        // document.getElementById('txt').innerText = 'Welcome'
+        // document.querySelector('#txt').innerText = 'Welcome'
+        // document.querySelector('h1').innerText = 'Welcome'
+        // document.querySelector('h1').innerHTML = '<p>Welcome<p> to web'
+        // document.querySelector('h1').innerHTML = '<a href ="#">Welcome</a>'
+        document.querySelector('h1').style.color = 'red'
+
+    </script> -->
+</body>
+
+</html>

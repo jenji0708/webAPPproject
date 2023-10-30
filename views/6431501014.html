@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz1_6431501014</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 bg-dark text-white pt-2">
+                <h2>Step 1: Choose products</h2>
+                <div class=" mb-2" id="products">
+                    <div>
+                        <input type="checkbox" class="form-check-input" name="apple" value="iphone15" required> Iphone
+                        15 (32,900 baht)
+                    </div>
+                    <div>
+                        <input type="checkbox" class="form-check-input" name="apple" value="iphone15Pro" required>
+                        Iphone 15 Pro (41,900)
+                    </div>
+                    <div>
+                        <input type="checkbox" class="form-check-input" name="apple" value="iphone15Max" required>
+                        Iphone 15 Max (48,900)
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 bg-secondary text-white pt-2">
+                <h2>Step 2: Choose payment method</h2>
+                <select class="form-select" id="payment_method" required>
+                    <option value="cash">Cash (-20%)</option>
+                    <option value="credit">Credit (+20%)</option>
+                </select>
+            </div>
+
+            <div class="col-sm-4 bg-light text-center pt-2">
+                <h2>Step 3: Paymemt</h2>
+                <p class="text-primary"></p>
+                <div class="">
+                    <button class="btn btn-success">Pay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const products = [
+            { "id": 1, "name": "iphone15", "price": 32900, },
+            { "id": 2, "name": "iphone15Pro", "price": 41900, },
+            { "id": 3, "name": "iphone15Max", "price": 48900, }
+        ];
+        document.querySelector('button').onclick = function () {
+            const phones = document.querySelectorAll('input[name=apple]:checked');
+
+            phones.forEach(function () {
+            });
+            alert('Please select at least a product ');
+
+        }
+
+
+        //output
+        let message = '';
+        message += 'You select 2 product(s) ';
+        message += '<br>Total price = ' + 'baht';
+
+        // document.querySelector('p').innerText = 'Welcome ' + username + ', next year you will be ' + (age_num + 1);
+        document.querySelector('p').innerHTML = message;
+
+
+
+
+    </script>
+</body>
+
+</html>

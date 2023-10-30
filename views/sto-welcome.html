@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1></h1>
+        <button class="btn btn-danger">Sign out</button>
+    </div>
+
+    <script>
+        // load username
+        const username = localStorage.user || sessionStorage.user;
+        // console.log(username);
+        // const username = sessionStorage.getItem('user');
+        if (username !== undefined) {
+            document.querySelector('h1').innerText = 'Welcome ' + username;
+        }
+        else {
+            window.location.replace('login.html');
+        }
+
+        // sign out
+        document.querySelector('button').onclick = function () {
+            // remove storage
+            localStorage.removeItem('user');
+            // localStorage.clear();
+            // return to login page
+            window.location.replace('sto-login.html');
+        }
+    </script>
+</body>
+
+</html>

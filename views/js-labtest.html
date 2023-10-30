@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labtest</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 bg-dark text-white pt-2">
+                <h2>Step 1: Choose products</h2>
+                <div class="mb-2" id="products">
+                    <div>
+                        <input type="checkbox" name="apple" value="normal" required> Iphone 15 (32,900 baht)
+                    </div>
+                    <div>
+                        <input type="checkbox" name="apple" value="pro" required> Iphone 15 Pro (41,900)
+                    </div>
+                    <div>
+                        <input type="checkbox" name="apple" value="max" required> Iphone 15 Max (48,900)
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-4 bg-secondary text-white pt-2">
+                <h2>Step 2: Choose payment method</h2>
+                <select class="form-select" id="payment_method" required>
+                    <option value="cash">Cash (-20%)</option>
+                    <option value="credit">Credit (+20%)</option>
+                </select>
+            </div>
+            <div class="col-sm-4 pt-2 text-center">
+                <h2>Step 3: Paymemt</h2>
+                <p class=" text-primary" id="num">
+                </p>
+                <p class="text-primary" id="price"></p>
+                <div>
+                    <button class="btn btn-success">Pay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const normal = 32900;
+        const pro = 41900;
+        const max = 48900;
+
+        document.querySelector('button').onclick = () => {
+            //alert('test');
+            //checkboxes
+            const cbProducts = document.querySelectorAll('input[name=apple]:checked');
+            const numProducts = cbProducts.length;
+            if (numProducts == 0) {
+                alert('Please select at least a product ');
+                return;
+            }
+            //total price
+            let totalPrice = 0;
+            for (cb of cbProducts) {
+                if (cb.value == 'normal') {
+                    totalPrice += normal;
+                }
+                if (cb.value == 'pro') {
+                    totalPrice += pro;
+                }
+                if (cb.value == 'max') {
+                    totalPrice += max;
+                }
+            }
+
+            const payment_method = document.querySelector('#payment_method').value;
+            if (payment_method == 'cash') {
+                //totalPrice = totalPrice - 0.2 ;
+                totalPrice *= 0.8;
+            } else if (payment_method == 'credit') {
+                totalPrice *= 0.2;
+            }
+            // alert(totalPrice);
+            //output
+            document.querySelector('#num').innerHTML = 'You select ' + numProducts + ' Product(s)';
+            document.querySelector('#price').innerHTML = 'Total price = ' + totalPrice + ' baht';
+        }
+
+
+
+    </script>
+</body>
+
+</html>

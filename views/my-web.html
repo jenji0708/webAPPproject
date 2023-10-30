@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link Bootstrap -->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <!-- script Bootstrap js -->
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <!-- link CSS -->
+    <link rel="stylesheet" href="/public/css/my-web.css">
+</head>
+
+<body>
+    <!-- Header --> <!--padding5 backgroudสีน้ำเงิน textสีขาวและอยู่center-->
+    <div class="p-5 bg-primary text-white text-center">
+        <h1>My Webpage made by Bootstrap5</h1> <!--เขียนข้อความลงไป-->
+        <p>Bootstrap is responsive and mobile-first</p>
+    </div>
+
+    <!-- Navigation --> <!--class navbar navbar-expand-sm navbar backgourdสีดำ navbar dark-->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav"> <!--text สีขาว marginขวา4 ourLogo -->
+                <a class="navbar-brand text-white mr-4" href="#">Our Logo</a>
+                <li class="nav-item ">
+                    <a class="nav-link m-1 text-white" id="home" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link m-1" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link m-1" href="#">Link</a>
+                </li>
+            </ul>
+            <!-- เพิ่มปุ่ม Login ด้านขวา -->
+            <a class="btn btn-danger ml-auto" href="#">Login</a> 
+            <!-- เพิ่มคลาส ml-auto เพื่อให้ระยะห่างของปุ่ม Login -->
+        </div>
+    </nav>
+
+    <!-- Content container -->
+    <div class="container mt-5">
+        <div class="row">
+             <!-- About section (Left Side) -->
+            <div class="col-sm-4">
+                <h2>About</h2>
+                <h5>My photo</h5>
+                <div class="card">
+                    <img class="card-img-top" src="/public/img/my-photo.jpg" alt="Card image" style="width: 100%;">
+                    <div class="card-body">
+                        <h4 class="card-title">My quote</h4>
+                        <p class="card-subtitle">I'll be back!</p>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+
+                <!-- Links -->
+                <h2>Links</h2>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 3</a>
+                    </li>
+                </ul>
+
+                <!-- My Friends-->
+                <h2>My friends</h2>
+                <div class="container-fluid mb-3">
+                    <div class="row justify-content-start">
+                        <div class="col-4">
+                            <img src="/public/img/testimonials-1.jpg" alt="Friend 1" class="rounded-circle avatar">
+                        </div>
+                        <div class="col-4">
+                            <img src="/public/img/testimonials-1.jpg" alt="Friend 2" class="rounded-circle avatar">
+                        </div>
+                        <div class="col-4">
+                            <img src="/public/img/testimonials-1.jpg" alt="Friend 3" class="rounded-circle avatar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article content(Right Side) -->
+            <div class="col-sm-8 bg-warning">
+                <article id="one">
+                    <h2>Treasure Hot Stage</h2>
+                    <h5>28 August 2023 20:30</h5>
+                    <div class="img-fluid">
+                        <img src="/public/img/photo1.jpg" alt="photo1" style="width: 100%;">
+                    </div>
+                    <p>Some Lorem ipsum dolor sit amet.</p>
+                </article>
+                <article id="two">
+                    <h2>Born Pink World Tour</h2>
+                    <h5>02 September 2023 16:00</h5>
+                    <div class="img-fluid">
+                        <img src="/public/img/photo2.jpg" alt="photo2" style="width: 100%;">
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer-->
+    <div class="footer mt-5 p-4 bg-dark text-white text-center">
+        Footer
+    </div>
+
+</body>

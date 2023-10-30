@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Admin </title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Admin</h1>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+                <!-- <tr>
+                    <td>1</td>
+                    <td><img src="/public/img/hat.png" alt="product"></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+
+        <!-- ================ JS ====================== -->
+        <script>
+            const product = document.querySelector('#table_body');
+
+            function delete_product(id) {
+                //alert('test');
+                // alert(id);
+                fetch('http://127.0.0.1:9000/products/' + id, { 'method': 'DELETE' }).then(function (response) {
+                    if (response.ok) {
+                        //refresh page
+                        // window.Location.reload();
+                        show_product();
+                    } else {
+                        throw Error('Delete failed');
+                    }
+                })
+                    .catch(function (err) {
+                        console.error(err);
+                        alert(err);
+                    })
+            }
+            // 1. Get data, asynchornous (async)
+            fetch('http://127.0.0.1:9000/products')
+                .then(function (response) {
+                    if (response.status == 200) {
+                        // console.log(response.status);
+                        if (response.ok) {
+                            //convert JSON to JS object, async
+                            return response.json();
+                        }
+                        throw Error('Connection error');
+                    }
+                }).then(function (data) {
+                    // console.log(data);
+                    // console.log(data[0].name);
+                    let product_detial = '';
+                    data.forEach(function (p) {
+                        product_detial += `<tr><td>${p.id}</td>`;
+                        product_detial += `<td><img src="/public/img/${p.image}" alt="product"></td>`;
+                        product_detial += `<td><button class="btn btn-danger" onclick = delete_product(${p.id})>Delete</button></td></tr>`;
+                    })
+                    table_body.innerHTML = product_detial;
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    alert('Error, Contact Admin')
+                })
+        </script>
+
+    </div>
+</body>
+
+</html>

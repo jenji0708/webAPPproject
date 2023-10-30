@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+}
+#content {
+    padding: 0 16px;
+}
+#navbar {
+    background-color: black;
+    padding: 8px 16px;
+}
+
+#footer {
+    text-align: center;
+    background-color: lightblue;
+    padding: 8px 0px;
+}

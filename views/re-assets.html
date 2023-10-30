@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset List</title>
+    <!-- Include Bootstrap 5 CSS and JavaScript -->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <!-- Include SweetAlert2 CSS and JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid mt-3 text-end">
+        <button type="button" class="btn btn-danger" id="btnSignOut">Sign out</button>
+    </div>
+
+    <div class="container-fluid mt-2 text-end">
+        <button type="button" class="btn btn-info text-dark" id="btnQRcode">QR code</button>
+    </div>
+
+    <div class="container-fluid">
+        <h2 class="mt-4">Asset List</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Choose</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="assetTableBody">
+                <!-- Asset data will be dynamically populated here -->
+            </tbody>
+        </table>
+
+        <h2 class="text-start mt-4">QR code</h2>
+    </div>
+    <script src="/public/js/assetstest.js"></script>
+</body>
+
+</html>

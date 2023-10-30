@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- <h1></h1>
+    <h3></h3>
+    <input type="radio" name="gender" value="male" class="form-check-input" checked> Male
+    <input type="radio" name="gender" value="female" class="form-check-input"> Female -->
+
+    <select id="fruit" class="form-select">
+        <!-- <option value="apple">apple</option>
+        <option value="banana">banana</option>
+        <option value="orange">orange</option> -->
+
+    </select>
+    <button class="btn btn-primary mt-3">Choose</button>
+
+
+    <script>
+        const json = '[{"name" : "apple" },{"name" : "banana" },{"name" : "orange" }]'
+        const fruits = JSON.parse(json);
+        // console.log(fruits[0]);
+        // console.log(fruits[2].name);
+        let data = '';
+        fruits.forEach(function (f) {
+            // data += '<option>' + f.name + '</option>';
+            data += `<option value=${f.name}>${f.name}</option>`;
+        });
+        document.querySelector('#fruit').innerHTML = data;
+        document.querySelector('button').onclick = function () {
+            const choice = document.querySelector('#fruit').value;
+            alert(choice);
+        }
+        // const json = '{"name" : "Lora", "female" : true}';
+        // const jsObject = JSON.parse(json);
+        // // console.log(jsObject.name);
+        // // console.log(jsObject["female"]);
+        // document.querySelector('h1').innerHTML = json;
+        // document.querySelector('h3').innerHTML = 'Name: ' + jsObject.name;
+        // if (jsObject.female === true) {
+        //     document.querySelector('input[type=radio][value=female]').checked = true;
+        // }
+
+
+    </script>
+</body>
+
+</html>

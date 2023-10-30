@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assets</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+<body>
+    <div class="container-fluid mt-3 text-end">
+        <button type="button" class="btn btn-danger" id="btn_SignOut" style="border-radius: 5px;">Sign out</button>
+    </div>
+    <div class="container-fluid mt-2 text-end">
+        <button type="button" class="btn btn-info" id="btn_qr_code" style="border-radius: 5px;">QR code</button>
+    </div>
+
+    <div class="container-fluid">
+        <h2 class="mt-4">Asset List</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Choose</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="assetTableBody">
+
+            </tbody>
+        </table>
+        <h2 class="my-4">QR code</h2>
+
+    </div>
+    <script src="/public/js/assets.js"></script>
+</body>
+
+</html>

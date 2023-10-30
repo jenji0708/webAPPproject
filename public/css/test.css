@@ -1,0 +1,22 @@
+.id-card {
+     border-radius: 5px;/* กำหนดขอบสีดำของ ID card */
+    padding: 10px; /* เพิ่มขอบของ ID card */
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 150px; /* กำหนดความกว้างสูงสุดของรูป */
+    max-height: 250px; /* กำหนดความสูงสูงสุดของรูป */
+}
+
+.caption {
+    margin-top: 10px; /* ระยะห่างด้านบนของคำอธิบายใต้ภาพ */
+    font-style: italic; /* เนื้อหาใต้ภาพเป็นตัวเอียง */
+}
+/* CSS for the avatar images */
+.avatar {
+    width: 100px; /* ปรับขนาดของ avatar ตามต้องการ */
+    height: 100px; /* ปรับขนาดของ avatar ตามต้องการ */
+    border: 2px solid #fff; /* เพิ่มเส้นขอบสีขาวรอบ avatar */
+    border-radius: 50%; /* ทำให้ avatar เป็นรูปวงกลม */
+    margin: 5px; /* ระยะห่างระหว่าง avatar */
+}
+

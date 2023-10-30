@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product </title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>MFU shop</h1>
+        <div id="product" class="d-flex flex-wrap">
+            <!-- <div class="card me-3 my-3">
+                <div class="card-body">
+                    <img src="/public/img/shirt.png" alt="product">
+                    <h3>Shirt</h3>
+                    <h4>Price = 200 baht</h4>
+                    <button class="btn btn-primary">Add</button>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- ================ JS ====================== -->
+        <script>
+            const product = document.querySelector('#product');
+
+            // 1. Get data, asynchornous (async)
+            fetch('http://127.0.0.1:9000/products')
+                .then(function (response) {
+                    if (response.status == 200) {
+                        // console.log(response.status);
+                        if (response.ok) {
+                            //convert JSON to JS object, async
+                            return response.json();
+                        } else {
+                            alert('Connection error');
+                        }
+                    }
+                }).then(function (data) {
+                    // console.log(data);
+                    // console.log(data[0].name);
+                    let product_detial = '';
+                    data.forEach(function (p) {
+                        product_detial += '<div class="card me-3 my-3">';
+                        product_detial += '<div class="card-body">';
+                        product_detial += `<img src="/public/img/${p.image}" alt="product">`;
+                        product_detial += `<h3>${p.name}</h3>`;
+                        product_detial += `<h4>Price = ${p.price} baht</h4>`;
+                        product_detial += '<button class="btn btn-primary">Add</button>';
+                        product_detial += '</div></div>';
+                    })
+                    product.innerHTML = product_detial;
+                })
+
+        </script>
+
+    </div>
+</body>
+
+</html>

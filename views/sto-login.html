@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="txtUsername" class="form-control mt-3" placeholder="Username">
+        <input type="password" id="txtPassword" class="form-control my-2" placeholder="Password">
+        <div>
+            <input type="checkbox" id="cbRemember" class="form-check-input"> Remember Me
+        </div>
+        <button class="btn btn-primary mt-3">Login</button>
+
+        <!-- bootstrap alert -->
+        <div id="alert_login" class="alert alert-danger mt-3" style="display: none;">
+            Wrong login, try again.
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('button').onclick = () => {
+            // alert('test');
+            const username = document.querySelector('#txtUsername').value;
+            const password = document.querySelector('#txtPassword').value;
+            // alert(username + "/" + password);
+            if (username == 'admin' && password == '1234') {
+                // check remember me?
+                if (document.querySelector('#cbRemember').checked) {
+                    // save username to web storage
+                    localStorage.user = username;
+                }
+                else {
+                    sessionStorage.user = username;
+                }
+                // sessionStorage.setItem("user", username);
+                // jump to welcome page
+                window.location.replace('sto-welcome.html');
+            }
+            else {
+                // wrong login
+                document.querySelector('#alert_login').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

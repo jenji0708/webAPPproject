@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public//js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form id="formLogin">
+            <input type="text" class="form-control my-2" placeholder="Username" id="txtUsername">
+            <input type="password" class="form-control my-2" placeholder="Password" id="txtPassword">
+
+            <button type="submit" class="btn btn-primary my-2">Login</button>
+        </form>
+    </div>
+
+
+    <script>
+        const formLogin = document.querySelector('#formLogin');
+        formLogin.onsubmit = async function (e) {
+            //prevent form to auto refresh
+            e.preventDefault();
+            const username = formLogin.elements['txtUsername'].value;
+            const password = formLogin.elements['txtPassword'].value;
+            console.log(username, password)
+            try {
+                // const respone = await fetch('/login/' + username + password + '/');
+                const options = {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        "username": username, "password": password
+                    }),
+                }
+                const respone = await fetch('/login', options);
+                if (respone.ok) {
+                    const data = await respone.text();
+                    alert(data);
+                } else {
+                    const data = await respone.text();
+                    throw Error(data);
+                }
+            } catch (err) {
+                console.error(err);
+                alert(err.message);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
